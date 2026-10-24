@@ -1,0 +1,86 @@
+@font-face { font-family: "Archivo"; src: url("fonts/archivo-latin-standard-normal.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Archivo"; src: url("fonts/archivo-latin-ext-standard-normal.woff2") format("woff2"); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Instrument Sans"; src: url("fonts/instrument-sans-latin-standard-normal.woff2") format("woff2"); font-weight: 400 700; font-stretch: 75% 100%; font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Instrument Sans"; src: url("fonts/instrument-sans-latin-ext-standard-normal.woff2") format("woff2"); font-weight: 400 700; font-stretch: 75% 100%; font-display: swap; unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+:root {
+  --peat: #14110E;
+  --humus: #2A241C;
+  --limestone: #F3EEE6;
+  --ochre: #C8893A;
+  --ochre-light: #E0B36A;
+  --ash: #8A8176;
+  --ash-light: #938A80;
+  --measure: 38rem;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--peat);
+  color: var(--limestone);
+  font: 400 1.0625rem/1.6 "Instrument Sans", system-ui, sans-serif;
+}
+a { color: var(--ochre-light); text-underline-offset: 0.2em; }
+a:hover { color: var(--limestone); }
+a:focus-visible { outline: 2px solid var(--ochre); outline-offset: 3px; }
+
+.wrap { max-width: 64rem; margin: 0 auto; padding: 0 1.25rem; }
+
+header.top { display: flex; justify-content: space-between; align-items: center; padding-block: 1.5rem; }
+header.top img { height: 2.25rem; width: auto; display: block; }
+.lang { font-size: 0.875rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.lang a, .lang span { margin-left: 0.75rem; }
+.lang span { color: var(--ash); }
+
+h1, h2, h3 { font-family: "Archivo", sans-serif; font-stretch: 90%; font-weight: 640; line-height: 1.1; margin: 0; }
+h1 { font-size: clamp(2.5rem, 7vw, 5rem); letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.5rem, 3.2vw, 2.25rem); }
+h3 { font-size: 1.125rem; letter-spacing: 0.02em; }
+
+.hero { position: relative; padding: 6rem 0 5rem; overflow: hidden; }
+.hero .traces { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+.hero > * { position: relative; z-index: 1; }
+.hero p.lead { max-width: var(--measure); font-size: 1.25rem; margin: 1.75rem 0 0; }
+.status { display: inline-block; margin-top: 2rem; padding: 0.4rem 0.8rem; border: 1px solid var(--humus); border-radius: 999px; font-size: 0.875rem; color: var(--ash); }
+
+section { padding: 4.5rem 0; border-top: 1px solid var(--humus); }
+section p { max-width: var(--measure); }
+.eyebrow { font-size: 0.8125rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ash); margin: 0 0 1rem; }
+
+blockquote { margin: 1.5rem 0 0; padding: 0; max-width: var(--measure); font-size: 1.1875rem; }
+blockquote p { margin: 0 0 1rem; }
+
+.three { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+.three div { background: var(--humus); border-radius: 0.75rem; padding: 1.5rem; }
+.three h3 { color: var(--ochre-light); margin-bottom: 0.6rem; }
+.three p { margin: 0; color: var(--limestone); }
+
+.mechanism { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2.5rem; align-items: center; }
+.mechanism img { width: 9rem; height: auto; }
+.line { font-family: "Archivo", sans-serif; font-stretch: 90%; font-weight: 600; font-size: clamp(1.25rem, 2.6vw, 1.75rem); color: var(--ochre-light); margin: 1.5rem 0; }
+
+.cta a.button { display: inline-block; margin-top: 1.5rem; padding: 0.85rem 1.4rem; border-radius: 0.5rem; background: var(--ochre); color: var(--peat); font-weight: 600; text-decoration: none; }
+.cta a.button:hover { background: var(--ochre-light); }
+.cta .note { color: var(--ash); font-size: 0.9375rem; }
+
+footer { border-top: 1px solid var(--humus); padding: 2rem 0 3rem; font-size: 0.875rem; color: var(--ash); }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; align-items: center; }
+footer img { height: 1.5rem; width: auto; }
+footer a { color: var(--ash-light); }
+
+.doc h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 3rem 0 2rem; }
+.doc h2 { font-size: 1.25rem; margin: 2.5rem 0 0.75rem; }
+.doc p, .doc ul { max-width: var(--measure); }
+
+@media (max-width: 40rem) {
+  .hero { padding: 4rem 0 3.5rem; }
+  .mechanism { grid-template-columns: 1fr; }
+  .mechanism img { width: 6rem; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .traces path.intense { stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: trace 6s ease-out 0.6s forwards; }
+  @keyframes trace { to { stroke-dashoffset: 0; } }
+}
